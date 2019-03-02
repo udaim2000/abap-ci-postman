@@ -37,7 +37,7 @@ def abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) {
 					"--global-var host=$HOST " +
 					"--global-var username=$USERNAME " +
 					"--global-var password=$PASSWORD " +
-					"--global-var package=$PACKAGE " +
+						"--global-var package=${PACKAGE} " +
 					"--global-var atc_variant=$VARIANT "
 			}
 		}
