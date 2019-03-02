@@ -156,6 +156,18 @@
 			"name": "RunATC",
 			"event": [
 				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"==========Request data==========\");",
+							"console.log(\"request.data\" + request.data);"
+
+							"console.log(\"x-csrf-x-csrf-token=\" + environment[\"x-csrf-token\"]);"
+						]
+					}
+				},				
+				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
