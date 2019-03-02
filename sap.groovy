@@ -9,7 +9,7 @@ def abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE) {
 		stage('[' + LABEL + '] ABAP Unit') {
 			dir('sap-pipeline') {
 				sh "newman run abap_unit_coverage.postman_collection.json --insecure --bail " +
-				"--environment EH7.postman_environment.json " +
+				"--environment sap-pipeline/EH7.postman_environment.json " +
 				"--timeout-request 120000 " +
 				"--global-var host=$HOST " +
 				"--global-var username=$USERNAME " +
@@ -32,7 +32,7 @@ def abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) {
 		stage('[' + LABEL + '] ABAP Code Inspector') {
 			dir('sap-pipeline') {
 					sh "newman run abap_sci.postman_collection.json --insecure --bail " +
-					"--environment EH7.postman_environment.json " +
+					"--environment sap-pipeline/EH7.postman_environment.json " +
 					"--timeout-request 120000 " +
 					"--global-var host=$HOST " +
 					"--global-var username=$USERNAME " +
@@ -54,7 +54,7 @@ def sap_api_test(LABEL,HOST,CREDENTIAL) {
 			dir('sap-pipeline') {
 				try {
 					sh "newman run SimpleRESTTest.postman_collection.json --insecure --bail " + 
-					"--environment EH7.postman_environment.json " + 
+					"--environment sap-pipeline/EH7.postman_environment.json " + 
 					"--reporters junit " +
 					"--timeout-request 10000 " +
 					"--global-var host=$HOST " +
