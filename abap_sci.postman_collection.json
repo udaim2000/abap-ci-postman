@@ -201,6 +201,7 @@
 							"    return \"\";",
 							"}",
 							"",
+							"console.log(responseBody);",
 							"if (tests[\"Status code is 200\"] = responseCode.code === 200) {",
 							"    var jsonObject = xml2Json(responseBody);",
 							"    ",
